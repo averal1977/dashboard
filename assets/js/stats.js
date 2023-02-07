@@ -1,9 +1,7 @@
 let loadData = () => {
-  let newData = [100, 80, 60, 40, 20, 10, 1];
-  // chartRef.data = newData;
 
-    let chartRef = document.getElementById("chart-bars").getContext("2d");   
-    new Chart(chartRef, {
+    let chartRef1 = document.getElementById("chart-bars").getContext("2d");   
+    let chart1 = new Chart(chartRef1, {
       type: "bar",
       data: {
         labels: ["M", "T", "W", "T", "F", "S", "S"],
@@ -14,8 +12,7 @@ let loadData = () => {
           borderRadius: 4,
           borderSkipped: false,
           backgroundColor: "rgba(255, 255, 255, .8)",
-          // data: [50, 20, 10, 22, 50, 10, 40],
-          data: newData,
+          data: [50, 20, 10, 22, 50, 10, 40],
           maxBarThickness: 6
         }, ],
       },
@@ -86,7 +83,7 @@ let loadData = () => {
 
     let chartRef2 = document.getElementById("chart-line").getContext("2d");
 
-    new Chart(chartRef2, {
+    let chart2 = new Chart(chartRef2, {
       type: "line",
       data: {
         labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -169,7 +166,7 @@ let loadData = () => {
 
     let chartRef3 = document.getElementById("chart-line-tasks").getContext("2d");
 
-    new Chart(chartRef3, {
+    let chart3 = new Chart(chartRef3, {
       type: "line",
       data: {
         labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -249,6 +246,9 @@ let loadData = () => {
       },
     });
 
+    let newData = [100, 80, 60, 40, 20, 10, 1];
+    chart1.data.datasets[0].data = newData;
+  
   }
 
 loadData()
